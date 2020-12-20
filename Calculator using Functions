@@ -1,0 +1,54 @@
+float a;
+float b;
+float c;
+float d;
+float e;
+float f;
+
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+}
+
+void loop() {
+float a;
+float b;
+float c;
+float d;
+float e;
+float f;
+  // put your main code here, to run repeatedly:
+Serial.println("Enter num. 1 ");
+while(Serial.available() == 0)
+{
+  
+}
+a = Serial.parseFloat();
+
+Serial.println("Enter num. 2 ");
+while(Serial.available() == 0)
+{
+  
+}
+b = Serial.parseFloat();
+tally(a, b, c, d, e, f);
+Serial.print("the sum of your numbers is ");
+Serial.println(c);
+Serial.print("the difference is ");
+Serial.println(d);
+Serial.print("mul is ");
+Serial.println(e);
+Serial.print("divi is ");
+Serial.println(f);
+}                
+void tally(float firstNum, float secondNum, float &sum, float &difference, float &mul, float &divi)
+{
+  sum = firstNum + secondNum;
+  difference = firstNum - secondNum;
+  mul = firstNum * secondNum;
+  divi = firstNum / secondNum;
+  Serial.println(sum);
+  Serial.println(difference);
+  Serial.println(mul);
+  Serial.println(divi);
+}
